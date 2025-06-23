@@ -28,10 +28,11 @@ jobs:
 
     - name: Build APK
       run: |
+        cd financas_pro  # 👈 entra na pasta onde está o buildozer.spec
         buildozer android debug
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
         name: financaspro-debug.apk
-        path: bin/*.apk
+        path: financas_pro/bin/*.apk
